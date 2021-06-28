@@ -35,17 +35,16 @@ const commandFiles = readdirSync("./komutlar").filter(file => file.endsWith(".js
 commandFiles.forEach((file) => {
     const command = require(`./komutlar/${file}`);
 
-    if(!command.help) throw new Error(`${file} isimli dosyada komutun help bölümü belirtilmemiş.`);
     if(!command.run || typeof command.run !== "function") throw new Error(`${file} isimli dosyada komutu başlatacak run fonk. bulunmamaktadır.`);
-    if(!command.help.name) throw new Error(`${file} isimli dosyada komut ismi belirtilmemiş.`);
-    if(!command.help.category) throw new Error(`${file} isimli dosyada komut kategorisi belirtilmemiş.`);
-    if(!command.help.permLevel && isNaN(command.help.permLevel)) throw new Error(`${file} isimli dosyada komut yetki leveli belirtilmemiş.`);
-    if(!command.help.description) throw new Error(`${file} isimli dosyada komut açıklaması belirtilmemiş.`);
-    if(!command.help.usage) throw new Error(`${file} isimli dosyada komutun nasıl kullanılacağı belirtilmemiş.`);
-    if(typeof command.help.enable !== "boolean") throw new Error(`${file} isimli dosyada enable bölümü true yada false değer alabilir.`);
-    if(!Array.isArray(command.help.aliases)) command.help.aliases = [];
+    if(!command.name) throw new Error(`${file} isimli dosyada komut ismi belirtilmemiş.`);
+    if(!command.category) throw new Error(`${file} isimli dosyada komut kategorisi belirtilmemiş.`);
+    if(!command.permLvl && isNaN(command.permLvl)) throw new Error(`${file} isimli dosyada komut yetki leveli belirtilmemiş.`);
+    if(!command.description) throw new Error(`${file} isimli dosyada komut açıklaması belirtilmemiş.`);
+    if(!command.usage) throw new Error(`${file} isimli dosyada komutun nasıl kullanılacağı belirtilmemiş.`);
+    if(typeof command.enable !== "boolean") throw new Error(`${file} isimli dosyada enable bölümü true yada false değer alabilir.`);
+    if(!Array.isArray(command.aliases)) command.help.aliases = [];
 
-    client.commands.set(command.help.name, command);
+    client.commands.set(command.name, command);
 
     command.help.aliases.forEach((alias) => client.aliases.set(alias, command.help.name));
 })

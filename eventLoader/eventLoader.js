@@ -1,7 +1,7 @@
 const req = file => require(`../events/${file}`);
 
 module.exports = client => {
-  // client.on("message", req("message"));
+   client.on("message", req("message"));
 
   // client.on("ready", () => req("ready")(client));
 
