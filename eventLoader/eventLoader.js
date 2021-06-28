@@ -5,21 +5,31 @@ module.exports = client => {
 
   // client.on("ready", () => req("ready")(client));
 
+  // client.on("guildCreate", req("guildCreate.js"));
+
+  // client.on("guildDelete", req("guildDelete.js"));
+
+  // client.on("guildUpdate", req("guildUpdate.js"));
+
   client.on("guildMemberAdd", req("guildMemberAdd.js"));
 
   client.on("guildMemberRemove", req("guildMemberLeave.js"));
 
-  // client.on("guildMemberUpdate", req("guildMemberUpdate.js"));
+  client.on("guildMemberUpdate", req("guildMemberUpdate.js"));
 
-  // client.on("messageDelete", req("messageDelete.js"));
+  client.on("guildBanAdd", req("guildBanAdd.js"));
 
-  // client.on("messageUpdate", req("messageUpdate.js"));
+  client.on("guildBanRemove", req("guildBanRemove.js"));
 
-  // client.on("roleCreate", req("roleCreate.js"));
+  client.on("messageDelete", req("messageDelete.js"));
 
-  // client.on("roleDelete", req("roleDelete.js"));
+  client.on("messageUpdate", req("messageUpdate.js"));
 
-  // client.on("roleUpdate", req("roleUpdate.js"));
+  client.on("roleCreate", req("roleCreate.js"));
+
+  client.on("roleDelete", req("roleDelete.js"));
+
+  client.on("roleUpdate", req("roleUpdate.js"));
 
   client.on("channelCreate", req("channelCreate.js"));
 
@@ -27,5 +37,5 @@ module.exports = client => {
 
   client.on("channelUpdate", req("channelUpdate.js"));
 
-  // client.on("voiceStateUpdate", req("voiceLog.js"));
+  client.on("voiceStateUpdate", req("voiceLog.js"));
 };

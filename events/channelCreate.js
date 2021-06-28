@@ -27,8 +27,8 @@ module.exports = async channel => {
         dynamic: true
     }) : null;
     const embed = new Discord.MessageEmbed()
-        .setAuthor(`${executor.id} kişisi kanal oluşturdu.`, avatarURL)
-        .addField("Kanal İsmi:", channel.name)
+        .setAuthor(`${executor} kişisi kanal oluşturdu.`, avatarURL)
+        .addField("Kanal İsmi:", channel)
         .addField("Kanal ID:", channel.id)
         .addField("Kanal Tipi:", type[channel.type])
         .addField("Kanal Kategorisi:", channel.parent ? channel.parent : "Yok")
