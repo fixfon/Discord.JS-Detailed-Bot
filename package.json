@@ -1,7 +1,7 @@
 {
-  "name": "mjolnir",
-  "version": "0.0.1",
-  "description": "Fixfon Mjolnir bot",
+  "name": "alfred",
+  "version": "0.5",
+  "description": "Alfred#0149",
   "main": "start.js",
   "scripts": {
     "test": "node start.js"
@@ -16,7 +16,7 @@
     "erela.js-spotify": "^1.2.0",
     "fs": "0.0.1-security",
     "moment": "^2.29.1",
-    "mongoose": "^5.13.2",
+    "mongoose": "^5.13.9",
     "ms": "^2.1.3",
     "path": "^0.12.7",
     "url": "^0.11.0"
