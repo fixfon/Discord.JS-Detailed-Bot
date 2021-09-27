@@ -33,13 +33,13 @@ client.manager = new Manager({
     },
 });
 
-const commandFolders = readdirSync('./komutlar');
+const commandFolders = readdirSync('./commands');
 
 commandFolders.forEach((folder) =>{
-    const commandFiles = readdirSync(`./komutlar/${folder}`).filter(file => file.endsWith(".js"));
+    const commandFiles = readdirSync(`./commands/${folder}`).filter(file => file.endsWith(".js"));
 
     commandFiles.forEach((file) => {
-        const command = require(`./komutlar/${folder}/${file}`);
+        const command = require(`./commands/${folder}/${file}`);
     
         if (!command.run || typeof command.run !== "function") throw new Error(`${file} isimli dosyada komutu başlatacak run fonk. bulunmamaktadır.`);
         if (!command.name) throw new Error(`${file} isimli dosyada komut ismi belirtilmemiş.`);

@@ -14,7 +14,7 @@ const ms = require("ms");
 
 module.exports = async (oldChannel, newChannel) => {
 
-    if (!newChannel.client.config.get(newMember.guild.id).get('logEvents') && !newChannel.client.config.get(newChannel.guild.id).get('logEvents').get('guildLog').enabled &&
+    if (!newChannel.client.config.get(newChannel.guild.id).get('logEvents') && !newChannel.client.config.get(newChannel.guild.id).get('logEvents').get('guildLog').enabled &&
         !newChannel.client.config.get(newChannel.guild.id).get('logEvents').get('guildLog').channelID) return
 
     const logCh = newChannel.guild.channels.cache.find(ch => ch.id == newChannel.client.config.get(newChannel.guild.id).get('logEvents').get('guildLog').channelID)
