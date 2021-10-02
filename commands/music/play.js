@@ -55,7 +55,7 @@ module.exports = {
             //     console.log("kicked play36")
             // }
         }
-        if(!args.length && player && player.paused && player.queue.totalSize) { // BURASI İLERİDE SORUN YARATABİLİR Mİ BAK.
+        if(!args.length && player && player.paused && player.queue.totalSize) {
             player.set("pausedBy", false);
             return player.pause(false)
         }
@@ -85,7 +85,7 @@ module.exports = {
             player.set("guildSkipVote", false); // aktif oylama olup olmadığı.
             // player.set("votes", []);
 
-            player.connect(); // BURASI SORUN ÇIKARABİLİR HALİ HAZIRDA CONNECT OLMUŞ BİR PLAYER İÇİN TEKRAR BAK.
+            player.connect();
         } 
         // else if (!message.guild.voice?.channelID){
         //     player.connect();
@@ -119,7 +119,7 @@ module.exports = {
                 dynamic: true
             }) : null);
 
-        await client.sendEmbed(message.channel, searchEmbed, true, 1500)
+        await client.sendEmbed(message.channel, searchEmbed, true, 750)
 
         try {
             // Search for tracks using a query or url, using a query searches youtube automatically and the track requester object
